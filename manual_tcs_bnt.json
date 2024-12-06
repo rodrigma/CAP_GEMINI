@@ -1,0 +1,381 @@
+[
+    {
+        "ID": "TC_R29_001",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el reporte R29 muestre correctamente el número de contrato en la columna 'Número de Cuenta' para una sociedad BANCO.",
+        "Precondiciones": "Usuario con permisos para acceder al reporte R29. Datos de prueba en la base de datos con sociedad BANCO y número de contrato.",
+        "Datos de entrada": {
+            "Sociedad": "BANCO",
+            "NumeroContrato": "1234567890"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Acceder al sistema.",
+            "Paso 2: Navegar al reporte R29.",
+            "Paso 3: Filtrar por la sociedad BANCO.",
+            "Paso 4: Verificar que la columna 'Número de Cuenta' muestre correctamente el número de contrato.",
+            "Paso 5: Exportar el reporte a formato PDF y verificar la información"
+        ],
+        "Resultados esperados": "El reporte R29 muestra el número de contrato en la columna 'Número de Cuenta' para todos los registros de la sociedad BANCO.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El número de contrato se muestra correctamente en el reporte. Si no coincide con el dato de entrada, se considera un fallo.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_002",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el reporte R29 extraiga correctamente el número de contrato del campo 'No Contrato' en la etapa 3: Gestión de Oficios → Respuesta Disposición.",
+        "Precondiciones": "Datos de prueba en la etapa 3: Gestión de Oficios → Respuesta Disposición con un número de contrato válido.",
+        "Datos de entrada": {
+            "NoContratoEtapa3": "9876543210"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Ingresar datos de prueba en la etapa 3: Gestión de Oficios → Respuesta Disposición.",
+            "Paso 2: Generar el reporte R29.",
+            "Paso 3: Verificar que el número de contrato en el reporte coincida con el ingresado en la etapa 3.",
+            "Paso 4: Validar que la información se haya extraído correctamente del campo 'No Contrato'."
+        ],
+        "Resultados esperados": "El número de contrato en el reporte R29 coincide con el ingresado en la etapa 3: Gestión de Oficios → Respuesta Disposición.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el número de contrato en el reporte coincide con el dato de entrada, se considera un éxito. De lo contrario, es un fallo.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_003",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar que el reporte R29 no muestre información si el campo 'No Contrato' en la etapa 3 está vacío.",
+        "Precondiciones": "Datos de prueba en la etapa 3: Gestión de Oficios → Respuesta Disposición con el campo 'No Contrato' vacío.",
+        "Datos de entrada": {
+            "NoContratoEtapa3": ""
+        },
+        "Acciones detalladas": [
+            "Paso 1: Ingresar datos de prueba en la etapa 3 con 'No Contrato' vacío.",
+            "Paso 2: Generar el reporte R29.",
+            "Paso 3: Verificar que la columna 'Número de Cuenta' esté vacía o muestre un mensaje indicando la falta de información.",
+            "Paso 4: Comprobar que no se genere ningún error en el sistema."
+        ],
+        "Resultados esperados": "El reporte R29 no muestra ningún número de contrato en la columna 'Número de Cuenta' para los registros con el campo 'No Contrato' vacío.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si la columna 'Número de Cuenta' está vacía o muestra un mensaje indicando la falta de información, se considera un éxito. De lo contrario, es un fallo.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_004",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el reporte R29 funcione correctamente con carga masiva de datos.",
+        "Precondiciones": "Conjunto de datos de prueba para carga masiva, incluyendo datos con y sin número de contrato.",
+        "Datos de entrada": {
+            "datos": "Conjunto de datos de prueba para carga masiva"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Realizar una carga masiva de datos de prueba.",
+            "Paso 2: Generar el reporte R29.",
+            "Paso 3: Verificar que el reporte se genere correctamente y que incluya todos los registros.",
+            "Paso 4: Verificar que el número de contrato se muestre correctamente en los registros que lo tienen.",
+            "Paso 5: Verificar que la columna 'Número de Cuenta' esté vacía en los registros que no tienen número de contrato."
+        ],
+        "Resultados esperados": "El reporte R29 se genera correctamente incluyendo todos los registros de la carga masiva, mostrando el número de contrato donde corresponda.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte se genera correctamente e incluye todos los registros, mostrando el número de contrato correctamente, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_005",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar el manejo de errores al ingresar un número de contrato inválido en la etapa 3.",
+        "Precondiciones": "Acceso al sistema y a la etapa 3 de gestión de oficios",
+        "Datos de entrada": {
+            "NoContratoEtapa3": "inválido"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Ingresar un número de contrato inválido en el campo 'No Contrato' de la etapa 3.",
+            "Paso 2: Intentar guardar los cambios.",
+            "Paso 3: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje de error indicando que el número de contrato es inválido, y no debe permitir guardar la información.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema muestra un mensaje de error y no permite guardar los cambios con un número de contrato inválido, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_006",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el reporte R29 muestre un registro por respuesta.",
+        "Precondiciones": "Datos de prueba con multiples respuestas para un mismo requerimiento.",
+        "Datos de entrada": {
+            "Respuestas": "Múltiples respuestas"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Ingresar datos de prueba con multiples respuestas.",
+            "Paso 2: Generar el reporte R29.",
+            "Paso 3: Verificar que el reporte muestre un registro por cada respuesta."
+        ],
+        "Resultados esperados": "El reporte R29 muestra un registro por cada respuesta, incluso si hay multiples respuestas para un mismo requerimiento.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte muestra un registro por cada respuesta, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_007",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar que el reporte R29 maneje correctamente la ausencia de datos.",
+        "Precondiciones": "Base de datos sin datos para generar el reporte.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Intentar generar el reporte R29 con una base de datos vacía.",
+            "Paso 2: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje indicando que no hay datos para generar el reporte, o un reporte vacío sin errores.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema maneja la ausencia de datos sin errores, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_008",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar el correcto funcionamiento del reporte R29 al exportarlo en formato PDF.",
+        "Precondiciones": "Reporte R29 generado con datos válidos.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29.",
+            "Paso 2: Exportar el reporte a formato PDF.",
+            "Paso 3: Abrir el archivo PDF y verificar que la información se muestre correctamente."
+        ],
+        "Resultados esperados": "El archivo PDF se genera correctamente y contiene toda la información del reporte R29.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el archivo PDF se genera correctamente y contiene toda la información, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_009",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar que el sistema no permita acceder al reporte R29 sin los permisos necesarios.",
+        "Precondiciones": "Usuario sin permisos para acceder al reporte R29.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Intentar acceder al reporte R29 con un usuario sin permisos.",
+            "Paso 2: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje indicando que el usuario no tiene permisos para acceder al reporte.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema deniega el acceso al usuario sin permisos, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_010",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar la correcta visualización del reporte R29 en diferentes navegadores.",
+        "Precondiciones": "Reporte R29 generado con datos válidos.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29.",
+            "Paso 2: Abrir el reporte en diferentes navegadores (Chrome, Firefox, Edge).",
+            "Paso 3: Verificar que la información se muestre correctamente en todos los navegadores."
+        ],
+        "Resultados esperados": "El reporte se visualiza correctamente en todos los navegadores probados.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte se visualiza correctamente en todos los navegadores, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_011",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar el manejo de errores al intentar generar el reporte con datos incorrectos en la base de datos.",
+        "Precondiciones": "Datos inconsistentes en la base de datos.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Intentar generar el reporte R29 con datos inconsistentes en la base de datos.",
+            "Paso 2: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje de error indicando el problema y no generar el reporte.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema muestra un mensaje de error sin generar el reporte, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_012",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el reporte R29 se genera correctamente con diferentes criterios de filtro.",
+        "Precondiciones": "Datos de prueba con diferentes criterios de filtro.",
+        "Datos de entrada": {
+            "Filtros": "Diferentes filtros"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29 con diferentes criterios de filtro.",
+            "Paso 2: Verificar que el reporte muestre los datos filtrados correctamente."
+        ],
+        "Resultados esperados": "El reporte muestra correctamente los datos filtrados según los criterios especificados.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte muestra los datos filtrados correctamente, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_013",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el reporte R29 se genera correctamente para un usuario con diferentes roles.",
+        "Precondiciones": "Usuarios con roles diferentes.",
+        "Datos de entrada": {
+            "Roles": "Diferentes roles"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29 con usuarios que tengan diferentes roles.",
+            "Paso 2: Verificar que el reporte muestre los datos correctamente para cada usuario."
+        ],
+        "Resultados esperados": "El reporte se genera correctamente para cada usuario, mostrando los datos según los permisos del rol.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte se genera correctamente para cada usuario, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_014",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar que el sistema maneja correctamente los intentos de acceso no autorizado al reporte R29.",
+        "Precondiciones": "Intento de acceso no autorizado al reporte.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Intentar acceder al reporte R29 sin iniciar sesión.",
+            "Paso 2: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe redirigir al usuario a la página de inicio de sesión.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema redirigir al usuario a la página de inicio de sesión, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_015",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar la funcionalidad de búsqueda dentro del reporte R29.",
+        "Precondiciones": "Reporte R29 con datos suficientes para probar la búsqueda.",
+        "Datos de entrada": {
+            "TerminoBusqueda": "Termino de busqueda"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29.",
+            "Paso 2: Utilizar la funcionalidad de búsqueda para encontrar un registro específico.",
+            "Paso 3: Verificar que la búsqueda devuelve los resultados esperados."
+        ],
+        "Resultados esperados": "La funcionalidad de búsqueda devuelve los resultados esperados.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si la búsqueda devuelve los resultados esperados, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_016",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar el comportamiento del reporte R29 ante una consulta con parámetros de filtro incorrectos.",
+        "Precondiciones": "Acceso al reporte R29.",
+        "Datos de entrada": {
+            "Filtros": "Filtros incorrectos"
+        },
+        "Acciones detalladas": [
+            "Paso 1: Intentar generar el reporte R29 con parámetros de filtro incorrectos.",
+            "Paso 2: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje de error o un reporte vacío sin errores.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema muestra un mensaje de error o un reporte vacío sin errores, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_017",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar el rendimiento del reporte R29 con un gran volumen de datos.",
+        "Precondiciones": "Base de datos con un gran volumen de datos.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29 con un gran volumen de datos.",
+            "Paso 2: Medir el tiempo de generación del reporte.",
+            "Paso 3: Verificar que el reporte se genere sin errores."
+        ],
+        "Resultados esperados": "El reporte se genera en un tiempo razonable y sin errores.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte se genera en un tiempo razonable y sin errores, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_018",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar la respuesta del sistema al intentar generar el reporte R29 con un usuario inactivo.",
+        "Precondiciones": "Usuario inactivo.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Intentar generar el reporte R29 con un usuario inactivo.",
+            "Paso 2: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje indicando que el usuario está inactivo.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema muestra un mensaje indicando que el usuario está inactivo, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_019",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar la correcta impresión del reporte R29.",
+        "Precondiciones": "Reporte R29 generado con datos válidos.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Generar el reporte R29.",
+            "Paso 2: Imprimir el reporte.",
+            "Paso 3: Verificar que la información se imprima correctamente."
+        ],
+        "Resultados esperados": "El reporte se imprime correctamente.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el reporte se imprime correctamente, se considera un éxito.",
+        "Prioridad": "Media",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    },
+    {
+        "ID": "TC_R29_020",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Verificar el manejo de errores al intentar generar el reporte R29 con una conexión a la base de datos interrumpida.",
+        "Precondiciones": "Conexión a la base de datos interrumpida.",
+        "Datos de entrada": {},
+        "Acciones detalladas": [
+            "Paso 1: Interrumpir la conexión a la base de datos.",
+            "Paso 2: Intentar generar el reporte R29.",
+            "Paso 3: Observar la respuesta del sistema."
+        ],
+        "Resultados esperados": "El sistema debe mostrar un mensaje de error indicando que la conexión a la base de datos está interrumpida.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Si el sistema muestra un mensaje de error indicando que la conexión a la base de datos está interrumpida, se considera un éxito.",
+        "Prioridad": "Alta",
+        "Autores": "IA",
+        "Fecha de creación/modificación": "2024-10-26"
+    }
+]
