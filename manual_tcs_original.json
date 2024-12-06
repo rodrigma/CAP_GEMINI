@@ -1,0 +1,425 @@
+[
+    {
+        "ID": "TC_ALTA_001",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar el correcto procesamiento de pagos con una tarjeta de crédito válida.",
+        "Precondiciones": "Usuario registrado y autenticado, con productos en el carrito.",
+        "Datos de entrada": {
+            "tarjeta": "4111 1111 1111 1111",
+            "fecha_expiracion": "12/25",
+            "cvv": "123"
+        },
+        "Acciones": [
+            "Paso 1.- Ingresar al carrito",
+            "Paso 2.- Proceder al checkout",
+            "Paso 3.- Ingresar los datos de la tarjeta",
+            "Paso 4.- Confirmar el pago"
+        ],
+        "Resultados esperados": "El pago se procesa correctamente y el pedido se confirma.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El pago es aprobado y el pedido aparece en la cuenta del usuario.",
+        "Prioridad": "Alta",
+        "Autores": "Rodrigo Martínez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_ALTA_002",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Validar la autenticación de dos factores en el proceso de inicio de sesión.",
+        "Precondiciones": "Usuario registrado con autenticación de dos factores activada.",
+        "Datos de entrada": {
+            "usuario": "usuario1",
+            "contraseña": "ContraseñaSegura123",
+            "token": "987654"
+        },
+        "Acciones": [
+            "Paso 1.- Navegar a la página de inicio de sesión",
+            "Paso 2.- Ingresar usuario y contraseña",
+            "Paso 3.- Ingresar token de autenticación",
+            "Paso 4.- Hacer clic en 'Iniciar sesión'"
+        ],
+        "Resultados esperados": "El usuario puede acceder a su cuenta después de la verificación de dos factores.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El usuario es autenticado exitosamente.",
+        "Prioridad": "Alta",
+        "Autores": "Rodrigo Martínez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_ALTA_003",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Validar la capacidad del sistema para manejar un alto volumen de usuarios concurrentes en un evento promocional.",
+        "Precondiciones": "Servidor en modo de prueba de estrés.",
+        "Datos de entrada": {
+            "usuarios_concurrentes": "5000"
+        },
+        "Acciones": [
+            "Paso 1.- Realizar 5000 conexiones simultáneas al sitio",
+            "Paso 2.- Realizar compras en masa desde diferentes cuentas"
+        ],
+        "Resultados esperados": "El sitio mantiene el rendimiento sin caídas.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El sistema no experimenta caídas ni errores de rendimiento.",
+        "Prioridad": "Alta",
+        "Autores": "Rodrigo Martínez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_ALTA_004",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el sistema permita devoluciones dentro de los primeros 30 días después de la compra.",
+        "Precondiciones": "Usuario registrado con un pedido realizado hace menos de 30 días.",
+        "Datos de entrada": {
+            "pedido_id": "12345",
+            "razon_devolucion": "Producto defectuoso"
+        },
+        "Acciones": [
+            "Paso 1.- Navegar a 'Mis pedidos'",
+            "Paso 2.- Seleccionar el pedido",
+            "Paso 3.- Solicitar devolución"
+        ],
+        "Resultados esperados": "El sistema genera una etiqueta de devolución.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Se genera la devolución correctamente y se notifica al usuario.",
+        "Prioridad": "Alta",
+        "Autores": "Rodrigo Martínez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_ALTA_005",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Asegurar que las notificaciones de stock agotado se envíen correctamente.",
+        "Precondiciones": "Producto en el carrito agotado.",
+        "Datos de entrada": {
+            "producto_id": "56789"
+        },
+        "Acciones": [
+            "Paso 1.- Agregar producto al carrito",
+            "Paso 2.- Intentar finalizar compra",
+            "Paso 3.- Observar notificación de stock"
+        ],
+        "Resultados esperados": "Se notifica que el producto está agotado.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El sistema muestra un mensaje de producto agotado y no permite completar la compra.",
+        "Prioridad": "Alta",
+        "Autores": "Rodrigo Martínez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_MEDIA_001",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el sistema permita al usuario registrarse usando su cuenta de Facebook.",
+        "Precondiciones": "Usuario con cuenta de Facebook.",
+        "Datos de entrada": {
+            "nombre_facebook": "Juan Pérez",
+            "correo_facebook": "juan.perez@facebook.com"
+        },
+        "Acciones": [
+            "Paso 1.- Navegar a la página de registro",
+            "Paso 2.- Hacer clic en el botón 'Registrarse con Facebook'",
+            "Paso 3.- Autorizar la aplicación para acceder a la información de la cuenta de Facebook",
+            "Paso 4.- Verificar que la información del usuario se haya llenado automáticamente",
+            "Paso 5.- Completar el registro"
+        ],
+        "Resultados esperados": "El usuario se registra exitosamente usando su cuenta de Facebook y se crea una cuenta en el sitio.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La información del usuario se llena correctamente y se crea una cuenta en el sitio.",
+        "Prioridad": "Media",
+        "Autores": "Ana Garcia",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_MEDIA_002",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Validar la funcionalidad de búsqueda de productos por categoría.",
+        "Precondiciones": "Usuario en la página de catálogo.",
+        "Datos de entrada": {
+            "categoria": "Ropa"
+        },
+        "Acciones": [
+            "Paso 1.- Seleccionar la categoría 'Ropa'",
+            "Paso 2.- Verificar que se muestra la lista de productos de la categoría seleccionada",
+            "Paso 3.- Aplicar filtros adicionales (precio, talla, color)"
+        ],
+        "Resultados esperados": "Se muestra la lista de productos de la categoría seleccionada y se pueden aplicar filtros adicionales.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La lista de productos se filtra correctamente y se muestra la información relevante.",
+        "Prioridad": "Media",
+        "Autores": "Ana Garcia",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_MEDIA_003",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el sistema permita agregar productos al carrito de compras.",
+        "Precondiciones": "Usuario en la página de detalle del producto.",
+        "Datos de entrada": {
+            "producto_id": "12345",
+            "cantidad": "2"
+        },
+        "Acciones": [
+            "Paso 1.- Seleccionar el producto",
+            "Paso 2.- Seleccionar la talla y la cantidad",
+            "Paso 3.- Hacer clic en 'Agregar al carrito'"
+        ],
+        "Resultados esperados": "El producto se agrega al carrito de compras con la cantidad seleccionada.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El producto se agrega correctamente al carrito y la cantidad se actualiza.",
+        "Prioridad": "Media",
+        "Autores": "Ana Garcia",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_MEDIA_004",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Validar el proceso de checkout con método de pago PayPal.",
+        "Precondiciones": "Usuario con productos en el carrito y cuenta de PayPal.",
+        "Datos de entrada": {
+            "correo_paypal": "juan.perez@paypal.com"
+        },
+        "Acciones": [
+            "Paso 1.- Ingresar al carrito",
+            "Paso 2.- Proceder al checkout",
+            "Paso 3.- Seleccionar 'PayPal' como método de pago",
+            "Paso 4.- Iniciar sesión en la cuenta de PayPal",
+            "Paso 5.- Confirmar el pago"
+        ],
+        "Resultados esperados": "El usuario puede completar la compra usando su cuenta de PayPal.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El pago se realiza exitosamente a través de PayPal y se confirma el pedido.",
+        "Prioridad": "Media",
+        "Autores": "Ana Garcia",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_MEDIA_005",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Asegurar que el sistema no permita agregar un producto al carrito si este está agotado.",
+        "Precondiciones": "Usuario en la página de detalle del producto.",
+        "Datos de entrada": {
+            "producto_id": "12345",
+            "cantidad": "2"
+        },
+        "Acciones": [
+            "Paso 1.- Seleccionar el producto",
+            "Paso 2.- Seleccionar la talla y la cantidad",
+            "Paso 3.- Hacer clic en 'Agregar al carrito'",
+            "Paso 4.- Verificar mensaje de stock agotado"
+        ],
+        "Resultados esperados": "El sistema muestra un mensaje de stock agotado y no permite agregar el producto al carrito.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El sistema muestra el mensaje de stock agotado correctamente.",
+        "Prioridad": "Media",
+        "Autores": "Ana Garcia",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_BAJA_001",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el usuario puede acceder a la página de contacto.",
+        "Precondiciones": "Usuario en la página principal.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Navegar a la página principal",
+            "Paso 2.- Hacer clic en la sección 'Contacto'"
+        ],
+        "Resultados esperados": "Se muestra la página de contacto con información de contacto y un formulario para enviar un mensaje.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La página de contacto se carga correctamente y muestra la información relevante.",
+        "Prioridad": "Baja",
+        "Autores": "Pedro Lopez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_BAJA_002",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el usuario puede actualizar su dirección de envío.",
+        "Precondiciones": "Usuario registrado y autenticado.",
+        "Datos de entrada": {
+            "direccion": "Calle Nueva 123, Ciudad, Estado, CP"
+        },
+        "Acciones": [
+            "Paso 1.- Acceder a 'Mi perfil'",
+            "Paso 2.- Editar la dirección de envío",
+            "Paso 3.- Ingresar la nueva dirección",
+            "Paso 4.- Guardar los cambios"
+        ],
+        "Resultados esperados": "La dirección de envío se actualiza correctamente.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La dirección de envío se actualiza sin errores.",
+        "Prioridad": "Baja",
+        "Autores": "Pedro Lopez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_BAJA_003",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el sistema muestra la información del producto en detalle.",
+        "Precondiciones": "Usuario en la página de detalle del producto.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Seleccionar un producto",
+            "Paso 2.- Verificar que se muestra la información del producto (nombre, descripción, imágenes, precio, tallas, colores)"
+        ],
+        "Resultados esperados": "Se muestra la información completa del producto.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La información del producto se muestra correctamente.",
+        "Prioridad": "Baja",
+        "Autores": "Pedro Lopez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_BAJA_004",
+        "Tipo": "Positivo",
+        "Propósito/Descripción": "Verificar que el usuario puede consultar su historial de pedidos.",
+        "Precondiciones": "Usuario registrado y autenticado.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Acceder a 'Mis pedidos'",
+            "Paso 2.- Verificar que se muestra la lista de pedidos realizados"
+        ],
+        "Resultados esperados": "Se muestra la lista de pedidos realizados con la información relevante.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "Se muestra la lista de pedidos correctamente.",
+        "Prioridad": "Baja",
+        "Autores": "Pedro Lopez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_BAJA_005",
+        "Tipo": "Negativo",
+        "Propósito/Descripción": "Asegurar que el sistema no permite acceder a la página de administración sin la autorización necesaria.",
+        "Precondiciones": "Usuario no autorizado en la página principal.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Intentar acceder a la página de administración",
+            "Paso 2.- Verificar mensaje de error"
+        ],
+        "Resultados esperados": "El sistema muestra un mensaje de error y no permite el acceso.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El sistema muestra el mensaje de error correctamente.",
+        "Prioridad": "Baja",
+        "Autores": "Pedro Lopez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_001",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Verificar que el sitio web se carga en menos de 2 segundos en condiciones normales.",
+        "Precondiciones": "Navegador web en condiciones normales.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Abrir el sitio web",
+            "Paso 2.- Medir el tiempo de carga"
+        ],
+        "Resultados esperados": "El sitio web se carga en menos de 2 segundos.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El tiempo de carga del sitio web es menor a 2 segundos.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_002",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Validar que el sitio web es compatible con los navegadores web más populares.",
+        "Precondiciones": "Navegadores web Chrome, Firefox, Safari, Edge.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Abrir el sitio web en Chrome",
+            "Paso 2.- Abrir el sitio web en Firefox",
+            "Paso 3.- Abrir el sitio web en Safari",
+            "Paso 4.- Abrir el sitio web en Edge"
+        ],
+        "Resultados esperados": "El sitio web se carga correctamente en todos los navegadores.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El sitio web se carga sin errores en todos los navegadores.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_003",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Verificar que el sitio web es compatible con dispositivos móviles.",
+        "Precondiciones": "Dispositivos móviles Android e iOS.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Abrir el sitio web en un dispositivo Android",
+            "Paso 2.- Abrir el sitio web en un dispositivo iOS"
+        ],
+        "Resultados esperados": "El sitio web se carga correctamente y se visualiza correctamente en dispositivos móviles.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El sitio web se carga y se visualiza correctamente en dispositivos móviles.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_004",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Validar que el sitio web cumple con las normas de accesibilidad WCAG 2.1 AA.",
+        "Precondiciones": "Herramienta de análisis de accesibilidad.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Analizar el sitio web con una herramienta de accesibilidad"
+        ],
+        "Resultados esperados": "El sitio web cumple con las normas de accesibilidad WCAG 2.1 AA.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "El análisis de accesibilidad no muestra errores.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_005",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Verificar que el sitio web utiliza el cifrado SSL para todas las transacciones.",
+        "Precondiciones": "Navegador web con herramientas de inspección de seguridad.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Abrir el sitio web",
+            "Paso 2.- Inspeccionar la conexión SSL del sitio web"
+        ],
+        "Resultados esperados": "El sitio web utiliza el cifrado SSL para todas las transacciones.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La conexión SSL del sitio web es válida.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_006",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Validar que el sistema de gestión de inventario se sincroniza correctamente con el ERP.",
+        "Precondiciones": "ERP con información de inventario actualizada.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Registrar un producto en el ERP",
+            "Paso 2.- Verificar que la información del producto se actualice en el sitio web"
+        ],
+        "Resultados esperados": "La información del producto se sincroniza correctamente con el ERP.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La información del producto se actualiza correctamente en el sitio web.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    },
+    {
+        "ID": "TC_NF_007",
+        "Tipo": "Funcional",
+        "Propósito/Descripción": "Verificar que el sistema de gestión de pedidos se integra correctamente con el CRM.",
+        "Precondiciones": "CRM con información de pedidos actualizada.",
+        "Datos de entrada": {},
+        "Acciones": [
+            "Paso 1.- Registrar un pedido en el CRM",
+            "Paso 2.- Verificar que la información del pedido se actualice en el sitio web"
+        ],
+        "Resultados esperados": "La información del pedido se sincroniza correctamente con el CRM.",
+        "Resultados actuales": "",
+        "Criterios de éxito/fallo": "La información del pedido se actualiza correctamente en el sitio web.",
+        "Prioridad": "Alta",
+        "Autores": "Carlos Rodriguez",
+        "Fecha de creación/modificación": "2024-10-10"
+    }
+]
